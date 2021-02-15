@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- <link rel="stylesheet" type='text/css' href="./public/stylesheets/index.css"> -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Hashtag Planners Register for K2K The Phoenix Spirit</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./assets/travel-4813658.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .mbody {
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mbody input {
+            outline: none;
+
+        }
+
+        .myform {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+
+        }
+
+
+        #imagediv {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .myform input {
+            width: 100%;
+
+        }
+
+        .myform label {
+            width: 100%;
+        }
+
+        .regiForm {
+            margin-top: 100px;
+        }
+
+        .registerbtn {
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('partials/navbar')%>
+
+
+
+        <!--Header ends-->
+        <div class="mbody container">
+            <!-- <img src="././assets/travel-4813658.jpg" alt=""> -->
+            <div class="regiForm   border-primary">
+                <div class="myform bg-white mt-5 ">
+                    <form id="register-form" action="/pay" method="post">
+                        <div class="container_1">
+                            <div id="imagediv " class="text-center">
+                                <img src="./assets/k2k.jpg" style="width: 30%; height: 30%;" alt="">
+                            </div>
+                            <h4 class="text-center text-primary mt-3">Registration Form</h4>
+                            <div class="form-group p-1  mt-4 ml-5 mr-5">
+                                <label for="name"><b>Name</b></label>
+                                <input type="text" class="form-control" placeholder="Name" name="name" id="name"
+                                    required>
+                            </div>
+
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="email"><b>Email Id</b></label>
+                                <input type="text" class="form-control" placeholder="Enter Email" name="email"
+                                    id="email" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="mobile"><b>Mobile Number</b></label>
+                                <input type="text" class="form-control" placeholder="Mobile Number" name="mobile"
+                                    id="mobile" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="aadhar"><b>Aadhar Card</b></label>
+                                <input type="number" class="form-control" placeholder="Aadhar Number" name="aadhar"
+                                    id="aadhar" required>
+
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="bike"><b>Motorcycle planning to take along with you on the K2K
+                                        ride</b></label>
+                                <input type="text" placeholder="Bike Name" class="form-control" name="bike" id="bike"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="bikeNumber"><b>Registered motorcycle number</b></label>
+                                <input type="text" placeholder="Bike number" name="bikeNumber" class="form-control"
+                                    id="bikeNumber" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="fb"><b>Facebook profile/page link</b></label>
+                                <input type="text" class="form-control" placeholder="Facebook Link" name="fb" id="fb"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="insta"><b>Instagram profile/page link</b></label>
+                                <input type="text" class="form-control" placeholder="Instagram Link" name="insta"
+                                    id="insta">
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="youtube"><b>Youtube Channel Link</b></label>
+                                <input type="text" class="form-control" placeholder="Youtube Link" name="youtube"
+                                    id="youtube">
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="vlog"><b>Vlog/Photography portfolio/any other activity</b></label>
+                                <input type="text" class="form-control" placeholder="Portfolio" name="vlog" id="vlog">
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="groups"><b>Motorcycle(s) you ride</b></label>
+                                <input type="text" placeholder="Bike Name" class="form-control" name="groups"
+                                    id="groups" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="mean"><b>What does Motorcycle mean to you?</b></label>
+                                <input type="text" class="form-control" placeholder="Motorcycle means to you..."
+                                    name="mean" id="mean" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="experience"><b>Riding experience/background (if any)</b></label>
+                                <input type="text" class="form-control" placeholder="Experience" name="experience"
+                                    id="experience" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="group"><b>Belong to any riding group?</b></label>
+                                <input type="text" placeholder="Group" class="form-control" name="group" id="group"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="km"><b>Maximum km's you've covered in one go</b></label>
+                                <input type="number" placeholder="In KM" name="km" id="km" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="km1"><b>Maximum km's you can ride</b></label>
+                                <input type="number" placeholder="In KM" name="km1" id="km1" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="about"><b>What do you think about the K2K ride?</b></label>
+                                <input class="form-control" type="text" placeholder="About K2K" name="about" id="about"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="time"><b>How early can you wake up for a motorcycle ride? (In
+                                        AM)</b></label>
+                                <input type="time" class="form-control" placeholder="Time" name="bike_2" id="bike_2"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="hours"><b>Total number of hours for a motorcycle ride in a day?</b></label>
+                                <input type="number" class="form-control" placeholder="Hour" name="hour" id="hour"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="hours"><b>Preference</b></label>
+                                <select type="text" class="form-control" id="ride" name="ride">
+                                    <option value="">---Select---</option>
+                                    <option value="Solo Ride">Solo Ride</option>
+                                    <option value="Group Ride">Group Ride</option>
+                                </select>
+                                <br>
+                                <select class="form-control" type="text" id="planning" name="planning">
+                                    <option value="">---Select---</option>
+                                    <option value="Pre Planned Rides">Pre Planned Rides</option>
+                                    <option value="Random Rides">Random Rides</option>
+                                </select>
+                                <br>
+                                <select type="text" class="form-control" id="activity" name="activity">
+                                    <option value="">---Select---</option>
+                                    <option value="Sight Seeing">Sight Seeing</option>
+                                    <option value="Group Activity">Group Activity</option>
+                                </select>
+                                <br>
+                                <select type="text" class="form-control" id="day" name="day">
+                                    <option value="">---Select---</option>
+                                    <option value="Day Ride">Day Ride</option>
+                                    <option value="Night Ride">Night Ride</option>
+                                </select>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="know"><b>How do you came to know about the K2K ride?</b></label>
+                                <input type="text" class="form-control" placeholder="Source" name="know" id="know"
+                                    required>
+
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="hours"><b>During the K2K ride one of your riding partner get injured you
+                                        will
+                                        :-</b></label>
+                                <select type="text" class="form-control" id="injured" name="injured">
+                                    <option value="">---Select---</option>
+                                    <option value="Stop for his/her assistance and let the team move ahead">Stop for
+                                        his/her
+                                        assistance and let the team
+                                        move ahead</option>
+                                    <option value="Stop the whole team">Stop the whole team</option>
+                                    <option value="Ignoring and continue the ride">Ignoring and continue the ride
+                                    </option>
+                                    <option value="Informing the medical assistance team and move ahead">Informing the
+                                        medical
+                                        assistance team and move
+                                        ahead</option>
+                                </select>
+                            </div>
+                            <div class="form-group ml-5 mr-5">
+                                <label for="riding"><b>What does riding means to you?</b></label>
+                                <input type="text" class="form-control" placeholder="Riding means to you..."
+                                    name="riding" id="riding" required>
+                            </div>
+                            <div class="form-group"></div>
+                            <div class="form-group"></div>
+                            <hr>
+                            <button type="submit" data-toggle="modal" data-target="#exampleModalCenter"
+                                class="registerbtn btn btn-primary  mb-5 ml-5 mr-3"
+                                >Submit & Pay</button>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <%- include('partials/footer')%>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
