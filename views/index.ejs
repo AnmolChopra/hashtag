@@ -49,6 +49,12 @@
 
         }
 
+        .myform input[type=checkbox] {
+            width: 10%;
+
+        }
+
+
         .myform label {
             width: 100%;
         }
@@ -95,6 +101,55 @@
                                 <input type="text" class="form-control" placeholder="Mobile Number" name="mobile"
                                     id="mobile" required>
                             </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="state"><b>State</b></label>
+                                <input type="text" class="form-control" placeholder="State" name="state" id="state"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="city"><b>State</b></label>
+                                <input type="text" class="form-control" placeholder="City" name="city" id="city"
+                                    required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="date"><b>Preferrabal Date</b></label>
+                                <input type="date" class="form-control" min="2021-04-01" max="2021-04-30"
+                                    placeholder="Enter Preferrable Date" name="date" id="date" required>
+                            </div>
+                            <div class="form-group p-1 ml-5 mr-5">
+                                <label for="hours"><b>Select City Name
+                                        :-</b></label>
+                                <select type="text" class="form-control" id="injured" name="injured">
+                                    <option value=""> All </option>
+                                    <option value="Shrinagar">Shrinage</option>
+                                    <option value="BTW Srinagar">Btw Shrinager</option>
+                                    <option value="Patnitop">Patnitop </option>
+                                    <option value="Amritsar">Amritsar</option>
+                                    <option value="Bathinda">Bathinda</option>
+                                    <option value="Bikaner">Bikaner</option>
+                                    <option value="Sand Dunes">Sand Dunes</option>
+                                    <option value="Jodhpur">Jodhpur</option>
+                                    <option value="Mount Abu">Mount Abu</option>
+                                    <option value="Ahmedabad">Ahmdabad</option>
+                                    <option value="Kevadiya">Kevadiya</option>
+                                    <option value="surat">Surat</option>
+                                    <option value="Nashik">Nashik</option>
+                                    <option value="Pune">Pune</option>
+                                    <option value="Satara">Satara</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gokarna">Gokarna</option>
+                                    <option value="Chikmagalur">Chikmagalur</option>
+                                    <option value="Bangalore">Bangalore</option>
+                                    <option value="wayanand">Wayanand</option>
+                                    <option value="Tanur">Tanur</option>
+                                    <option value="Kochi">Kochi</option>
+                                    <option value="Tiruvanathapuram">Tiruvanathapuram</option>
+                                    <option value="KanyaKumari">KanyaKumari</option>
+
+                                </select>
+                            </div>
+
+
                             <div class="form-group p-1 ml-5 mr-5">
                                 <label for="aadhar"><b>Aadhar Card</b></label>
                                 <input type="number" class="form-control" placeholder="Aadhar Number" name="aadhar"
@@ -237,8 +292,7 @@
                             <div class="form-group"></div>
                             <hr>
                             <button type="submit" data-toggle="modal" data-target="#exampleModalCenter"
-                                class="registerbtn btn btn-primary  mb-5 ml-5 mr-3"
-                                >Submit & Pay</button>
+                                class="registerbtn btn btn-primary  mb-5 ml-5 mr-3">Submit & Pay</button>
 
 
                         </div>
