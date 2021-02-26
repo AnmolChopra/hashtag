@@ -4,6 +4,7 @@ let cors = require('cors');
 const ejs = require('ejs');
 const https = require("https");
 const qs = require("querystring");
+const feedback = require('./feedback')
 
 // const checksum_lib = require("./Paytm/checksum");
 // const config = require("./Paytm/config");
@@ -17,7 +18,8 @@ const checksum_lib = require("./Paytm/checksum");
 const config = require("./Paytm/config");
 
 let mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/hashtag", { userNewUrlParser: true });
+const controller = require("./controller");
+mongoose.connect("mongodb+srv://akash:akash1234@cluster0.4ayge.mongodb.net/test?retryWrites=true&w=majority", { userNewUrlParser: true });
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 app.use(express.static(path.join(__dirname, 'public')));
@@ -138,6 +140,11 @@ app.post("/pay", [parseUrl, parseJson], (req, res) => {
     }
   })
 });
+app.post('/feedback', (req, res) => {
+
+  controller.feedback(req, res);
+
+})
 app.post("/callback", (req, res) => {
   // Route for verifiying payment
 
