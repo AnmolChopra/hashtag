@@ -95,7 +95,7 @@ module.exports = {
                 channel: "sms"
             })
             .then((data) => {
-                res.send({ err: 0 });
+                res.send(data);
             }).catch(err => {
                 console.log(err);
             })
@@ -112,6 +112,7 @@ module.exports = {
                 code: req.body.code
             })
             .then((data) => {
+                console.log("verification is done by using mobile no");
                 res.send({ err: 0, data: data });
             }).catch(err => {
                 console.log(err);
