@@ -37,6 +37,9 @@ app.get("/", (req, res) => {
   res.render('index');
   // res.sendFile(__dirname + "/index.html");
 });
+app.post('/login', (req, res) => {
+  controller.register(req, res);
+})
 app.post("/verify", (req, res) => {
   controller.verify(req, res);
 })

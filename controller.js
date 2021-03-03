@@ -85,8 +85,7 @@ module.exports = {
             }
         })
     },
-    verify: function (req, res) {
-
+    register: function (req, res) {
         let str = `+91${req.body.mobile_no}`;
         client.verify
             .services(keys.serviseId)
@@ -100,6 +99,24 @@ module.exports = {
             }).catch(err => {
                 console.log(err);
             })
+
+
+    },
+    verify: function (req, res) {
+        let str = `+91${req.body.mobile_no}`;
+        client.verify
+            .services(keys.serviseId)
+            .verificationChecks
+            .create({
+                to: str,
+                code: req.body.code
+            })
+            .then((data) => {
+                res.send({ err: 0, data: data });
+            }).catch(err => {
+                console.log(err);
+            })
+
 
     },
     feedback: function (req, res) {
