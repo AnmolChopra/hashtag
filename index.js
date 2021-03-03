@@ -2,26 +2,32 @@ const express = require("express");
 let path = require('path')
 let cors = require('cors');
 const ejs = require('ejs');
+const body_parser = require('body-parser');
+const app = express();
 const https = require("https");
 const qs = require("querystring");
-const feedback = require('./feedback')
+const feedback = require('./feedback');
+let mongoose = require('mongoose');
+let profile = require('./profile');
+const checksum_lib = require("./Paytm/checksum");
+const config = require("./Paytm/config");
+const controller = require("./controller");
+mongoose.connect("mongodb+srv://akash:akash1234@cluster0.4ayge.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log("database is connected");
+}).catch(err => {
+  console.log(err);
+});
+
 
 // const checksum_lib = require("./Paytm/checksum");
 // const config = require("./Paytm/config");
 
-const app = express();
 app.use(cors());
 app.set('view engine', 'ejs');
-let profile = require('./profile');
-
-const checksum_lib = require("./Paytm/checksum");
-const config = require("./Paytm/config");
-
-let mongoose = require('mongoose');
-const controller = require("./controller");
-mongoose.connect("mongodb+srv://akash:akash1234@cluster0.4ayge.mongodb.net/test?retryWrites=true&w=majority", { userNewUrlParser: true });
-const parseUrl = express.urlencoded({ extended: false });
-const parseJson = express.json({ extended: false });
+app.use(body_parser.urlencoded({ extended: true }))
+app.use(body_parser.json());
+const parseUrl = express.urlencoded({ extended: true });
+const parseJson = express.json({ extended: true });
 app.use(express.static(path.join(__dirname, 'public')));
 const PORT = process.env.PORT || 4000;
 app.get('/work', (req, res) => {
@@ -31,6 +37,9 @@ app.get("/", (req, res) => {
   res.render('index');
   // res.sendFile(__dirname + "/index.html");
 });
+app.post("/verify", (req, res) => {
+  controller.verify(req, res);
+})
 
 app.post("/pay", [parseUrl, parseJson], (req, res) => {
   var paymentDetails = {
@@ -142,6 +151,7 @@ app.post("/pay", [parseUrl, parseJson], (req, res) => {
 });
 app.post('/feedback', (req, res) => {
 
+  console.log(req.body);
   controller.feedback(req, res);
 
 })

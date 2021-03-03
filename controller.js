@@ -1,10 +1,12 @@
 let profile = require('./profile');
-
 const checksum_lib = require("./Paytm/checksum");
 const config = require("./Paytm/config");
+const twilo_config = require('./keys');
 const feedback = require('./feedback');
 let mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/hashtag", { userNewUrlParser: true });
+const keys = require('./keys');
+const client = require('twilio')(twilo_config.accountid, twilo_config.authtoken);
+mongoose.connect("mongodb+srv://akash:akash1234@cluster0.4ayge.mongodb.net/test?retryWrites=true&w=majority", { userNewUrlParser: true });
 
 module.exports = {
     regi: function (req, res) {
@@ -83,7 +85,25 @@ module.exports = {
             }
         })
     },
+    verify: function (req, res) {
+
+        let str = `+91${req.body.mobile_no}`;
+        client.verify
+            .services(keys.serviseId)
+            .verifications
+            .create({
+                to: str,
+                channel: "sms"
+            })
+            .then((data) => {
+                res.send({ err: 0 });
+            }).catch(err => {
+                console.log(err);
+            })
+
+    },
     feedback: function (req, res) {
+        console.log(req.body)
         const instanse = {
             name: req.body.name,
             email: req.body.email,
@@ -91,9 +111,9 @@ module.exports = {
             message: req.body.message
         }
         feedback.create(instanse).then(() => {
-            res.rend({err:0});
+            res.rend({ err: 0 });
         }).catch(err => {
-            res.send({err:1});
+            res.send({ err: err });
         })
     },
     callback: function (req, res) {
